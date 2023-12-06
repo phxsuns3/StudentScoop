@@ -1,4 +1,4 @@
-# StudentSecure
+# StudentScoop
 Contributors - Aaron Baker, Matthew Thomas-Baker
 
 Supervisor - Thomas Clarke
