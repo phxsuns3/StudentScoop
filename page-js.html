@@ -1,0 +1,77 @@
+<script>
+
+  var datePicker = {}
+
+
+  var datepickerOptions = {
+  
+    format: 'mmm dd yyyy',
+    autoClose : "true",
+    firstDay : 1,
+    setDefaultDate: true,
+  
+    onOpen: function() {
+      this.options.format = datepickerOptions.format
+    }
+  }
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+  
+    elems.forEach(e => {
+      console.log(e.id)
+      datePicker[e.id] =  M.Datepicker.init(elems, datepickerOptions);
+
+    })  
+  });
+  const tx = document.getElementsByTagName("textarea");
+  for (let i = 0; i < tx.length; i++) {
+    tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:show;");
+    tx[i].addEventListener("input", OnInput, false);
+  }
+
+  function OnInput() {
+    this.style.height = 0;
+    this.style.height = (this.scrollHeight) + "px";
+  }
+
+  document.getElementById("btn").addEventListener("click", doStuff);
+
+  function doStuff()
+  {
+
+    var userInfo = {};
+    userInfo.first_name = document.getElementById("first_name").value;
+    userInfo.last_name = document.getElementById("last_name").value;
+    userInfo.date = document.getElementById("date").value;
+    google.script.run.withSuccessHandler(data =>{
+      var line = "";
+      var index = 0;
+
+
+      if(data[0] != "Error")
+      {
+        for(var i = 0; i < data.length; i++)
+        {
+          line += data[i];
+        }
+        document.getElementById("results").value = line;
+        $('#textarea1').val('New Text');
+        M.textareaAutoResize($('#textarea1'));
+        //document.getElementById("results").scrollTop = document.getElementById("results").scrollHeight;
+      }else{
+        document.getElementById("results").value = "Student Not Found!";
+      }
+    }).userClicked(userInfo.first_name, userInfo.last_name, userInfo.date);
+    
+  }
+
+
+</script>
