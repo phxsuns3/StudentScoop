@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <?!= include("map-css") ?>
+  </head>
+  <body>
+  <body bgcolor="#d3cab4">
+    <nav class="#b71c1c red darken-4">
+    <div class="nav-wrapper">
+      <img rel="icon" type="image/png" src="https://drive.google.com/uc?export=download&id=1Az24QCIqWurJEUT8yj7ja2cCkiS2Pszj" width="64px" height="64px">
+      <a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=index" class="brand-logo"> &nbsp; Boulder Creek High School</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=index">Home</a></li>
+        <li><a href='https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=page'>Student Search</a></li>
+        <li><a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=map">School Map</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+      <td>
+        <h1>300/400 Building</h1>
+        <img src="https://drive.google.com/uc?export=download&id=1q8XFcOIjrGHZrhwJL8novV8W9xDCfLPH" alt=" 300400image" class="main">
+        <h6><b>Navigation:</b></h6>
+        <ul>
+        <li><a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=map">School Map</a></li>
+        <li>
+        <a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=500600map">500/600 Building</a>
+        </li>
+        <li>
+        <a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=Cafeteria">Cafeteria Building</a>
+        </li>
+        <li>
+        <a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=fieldmap">Football Field</a>
+        </li>
+        <li>
+        <a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=gym">Gym Building</a>
+        </li>
+        <li>
+        <a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=office">Office Building</a>
+        </li>
+        <li>
+        <a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=libraryPerforming">Library and Performing Arts Building</a>
+        <h6><b>Enter room number and date to show all students checked out in the last 10 minutes!</b></h6>
+        <h7><b>Leave room number blank to see all room numbers!</b></h7>
+        <br>
+        <h8><b>Enter date to show all students checked out during that day!</b></h8>
+        <br>
+        <label class="numberLabel">Room number:</label>
+        <textarea id="roomNumberID" class="roomNumber"></textarea>
+        <div class="input-field col s12">
+          <input type="text" id="date" class="datepicker">
+          <label for="date">Select Date:</label>
+        </div>
+        <br>
+          <button id="btn" class="waves-effect waves-light btn-small" style="margin-bottom: 10px;"><i class="material-icons left">cloud</i>SEARCH</button>
+        <script>
+          document.getElementById("btn").addEventListener("click", function(){click(300400)});
+        </script>
+
+        <label class="results">Results:</label>
+        <textarea class="resultsT" id="results">Click SEARCH for results!</textarea>
+        </li>
+      </td>
+      
+  </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <?!= include("map-js") ?>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+  </body>
+</html>
