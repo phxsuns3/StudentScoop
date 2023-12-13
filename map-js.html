@@ -1,0 +1,66 @@
+<script>
+var datePicker = {}
+
+
+  var datepickerOptions = {
+  
+    format: 'mmm dd yyyy',
+    autoClose : "true",
+    firstDay : 1,
+    setDefaultDate: true,
+  
+    onOpen: function() {
+      this.options.format = datepickerOptions.format
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+  
+    elems.forEach(e => {
+      console.log(e.id)
+      datePicker[e.id] =  M.Datepicker.init(elems, datepickerOptions);
+
+    })  
+  });
+
+  function click(buildingNumber)
+  {
+    console.log(buildingNumber)
+    var rNumber = "";
+    var date = "";
+    rNumber = document.getElementById("roomNumberID").value;
+    //if(document.getElementById("roomNumberID") != null)
+    //{
+    //  rNumber = document.getElementById("roomNumberID").value;
+    //}
+    //if(rNumber.length == 0)
+    //{
+    //  rNumber = buildingNumber;
+    //}
+    if(document.getElementById("date").value.length != 0)
+    {
+      
+      date = document.getElementById("date").value;
+      console.log("Date " + date)
+    }
+    console.log("rNumber = " + rNumber);
+    google.script.run.withSuccessHandler(data =>{
+      var line = "";
+      var index = 0;
+
+      if(data[0] != "Error")
+      {
+        for(var i = 0; i < data.length; i++)
+        {
+          line += data[i];
+        }
+        document.getElementById("results").value = line;
+        $('#textarea1').val('New Text');
+        M.textareaAutoResize($('#textarea1'));
+        //document.getElementById("results").scrollTop = document.getElementById("results").scrollHeight;
+      }else{
+        document.getElementById("results").value = "Student Not Found!";
+      }
+    }).getLast10Minutes(rNumber, date);
+  }
+</script>
