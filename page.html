@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <?!= include("page-css"); ?>
+  </head>
+  <body bgcolor="#d3cab4">
+    <nav class="#b71c1c red darken-4">
+    <div class="nav-wrapper">
+      <img rel="icon" type="image/png" src="https://drive.google.com/uc?export=download&id=1Az24QCIqWurJEUT8yj7ja2cCkiS2Pszj" width="64px" height="64px">
+      <a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=index" class="brand-logo"> &nbsp; Boulder Creek High School</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=index">Home</a></li>
+        <li><a href='https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=page'>Student Search</a></li>
+        <li><a href="https://script.google.com/a/macros/learner.dvusd.org/s/AKfycbwN1K6goVOTiFVlVIu9y6f7CM2KSnReVGfB3CCvWK-U/dev?page=map">School Map</a></li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container">
+      <h1>Student Search</h1>
+      <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="Type Student's First Name Here" id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="Type Student's Last Name Here" id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+
+      <!---<div class="row">  
+        <div class="input-field col s6">
+          <select id="destination">
+            <option disabled selected>Choose your option</option>
+              <?!= list; ?>
+          </select>
+          <label>Destinations</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="time" id="timeBefore">
+          <label for="timeBefore">Start Time:</label>
+        </div>
+        <div class="input-field col s6">
+        </div>--->
+        <div class="input-field col s6">
+          <input type="text" id="date" class="datepicker">
+          <label for="date">Select Date:</label>
+        </div>
+      <!--</div>-->
+
+      <div class="row">
+        <button id="btn" class="waves-effect waves-light btn-small" ><i class="material-icons left">cloud</i>Search</button>
+      </div>
+      <div class="row">
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea readonly placeholder="Results!" rows="20" id="results" class="materialize-textarea"></textarea>
+              <label for="results">Results</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!---<div class="row">
+        <div class="input-field col s12">
+            <input disabled placeholder="Your Results Will Show Here" id="results" type="text" class="validate">
+            <label for="results">Results</label>
+          </div>
+      <div>--->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <?!= include("page-js"); ?>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+  </body>
+</html>
